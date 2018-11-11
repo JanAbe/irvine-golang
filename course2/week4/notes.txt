@@ -1,0 +1,32 @@
+interface values
+- can be treated like other values
+	- assigned to variables
+	- passed and returned
+- interface values have two components:
+	1. Dynamic type: the concrete type which it is assigned to
+	2. Dynamic value: the value of the dynamic type
+- an interface value is actually a pair (dynamic type, dynamic value)
+
+var s Shape
+var r Rectangle{}
+s = r
+In this case the dynamic type of s is Rectangle and the dynamic value of s is r
+
+It is legal to have an interfce value which has a dynamic type but NO dynamic value
+In this situation you can still call the methods of the interface on the dynamic type
+
+If an interface value doesn't have a dynamic type you can not call the methods of the interface
+
+Why use interfaces:
+- They express some sort of conceptual similarity between different types
+- If you need a function which takes multiple types of parameter
+
+The empty interface is a standard interface, it is predefined.
+It specifies no methods, this means that any type can satisfy this interface.
+Use it when you want a function that accepts any type as a parameter.
+
+Interfaces hide the differences between types
+
+Sometimes you need to treat different typs in different ways
+In these cases you need to expose the type.
+Type assertions can be used to determine the concrete type of an interface value

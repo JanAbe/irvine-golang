@@ -1,0 +1,48 @@
+Notes golang: functions, methods and interfaces
+
+parameters are listed in parenthesis after a function name
+arguments are supplied when a function is called
+
+call by value (the way it is done in Go) means:
+That the passed arguments are copied to the parameters of the function
+The data that the funcion is using is a COPY of the original data
+===========================================
+Tradeoffs of call by value
+advantage: data encapsulation
+Function variables are only changed inside the function. A function cannot change the original data.
+This means errors can less spread out, they are localized 
+
+disadvantage: copying time
+Because a copy of the orginal data is used, there is time spent copying the data. You have to copy the arguments into the parameters.
+Large objects may take a long time to copy.
+============================================
+Call by reference
+You can manually call by reference by passing a pointer/reference. Instead of passing the argument you want passed, you pass a pointer. Do this if you want the function to alter the values passed to it. When you pass by reference a called function has direct access to the called variable in memory. 
+
+Tradeoffs of call by reference
+Advantage: Copying time
+Don't need to copy arguments, only the pointer which is way smaller than copying all the arguments
+Disadvantag: Data encapsulation
+If there is a bug in the function that alters a variable by using the reference, it may affect other parts of the program.
+============================================
+use slices, not arrays :)
+============================================
+How to write functions:
+If you are asked to find a feature, you can find it quickly
+Organise your code
+If you are asked about where data is used, you know
+============================================
+Debugging principles
+two options:
+example: code crashes inside a function
+function is written incorrectly
+data that the function uses is incorrect
+
+
+functions should be short, simple and do one thing
+can make like a function that only calls other functions
+
+control-flow complexity:
+how many paths there are from the beginning of a function to the end
+
+functional hierarchy (splitting a function in functions) can reduce control flow complexity

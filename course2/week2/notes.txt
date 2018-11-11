@@ -1,0 +1,10 @@
+Functions are first-class:
+Treating a function as a first class value generally means that it can be treated as any other type (int, string etc.)
+
+functions can return functions
+might create a function with controllable parameters
+You can make a function that makes the function you want
+
+A closure is a function + its environment
+When functions are passed/returned, their environment comes with them, the environment where it was defined.
+

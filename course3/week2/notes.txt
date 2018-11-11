@@ -1,0 +1,34 @@
+Processes:
+- an instance of running program
+
+Things unique to a process
+1. memory: virtual address space, code, stack, heap
+2. registers (they store values): program counter, stack pointer
+
+Operating system
+Allows many processes to execute concurrently
+Processes are switched quickly (20 ms)
+Scheduling task: which program runs at which time
+User has the IMPRESSION of parallelism
+Operating system must give processes fair access to resources: memory, i/o devices
+An operating system manages a lot of processes
+
+Threads vs Processes:
+Downside of processes: context switch can take a long time. It needs to store data in memory and take data of of memory. Accessing memory can be slow.
+
+A thread is like a process but with less context
+It shares some context with other threads of the process
+Many threads can exist in one process
+OS schedules threads rather than processes
+
+Goroutines:
+like a thread in Go
+many goroutines execute within a single OS thread
+
+Race conditions:
+A race condition is a problem occuring because of the interleavings you have to consider
+outcome depends on non-deterministic ordering
+Make sure that your program its outcome does not depend on the interleavings. If it does it is called a race condition.
+Races occur due to communication. You can communicate for example by using the same variable.
+
+

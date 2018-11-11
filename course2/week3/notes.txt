@@ -1,0 +1,7 @@
+func (p Person) Talk() {
+	fmt.Println("words...")
+}
+
+The receiver type specified in methods is implicitly passed to the method.
+This happens by VALUE -> a copy is made and passed. 
+In the example above p is implicitly passed as an argument to the Talk() method even though it is not written that way.
